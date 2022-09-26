@@ -12,7 +12,7 @@ jobs:
       - name: Install and Build Storybook
         run: |
           npm install
-          npm run build-storybook
+          BASE_PATH=/test-project/ npm run build-storybook
       - name: Build Pages Artifact
         uses: actions/upload-pages-artifact@v1
         with:
