@@ -9,11 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Build Storybook
+      - name: Install and Build Storybook
+        run: |
+          npm install
+          npm run build-storybook
+      - name: Build Pages Artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: storybook-static
-  # Deploy job
   deploy:
     # Add a dependency to the build job
     needs: build
