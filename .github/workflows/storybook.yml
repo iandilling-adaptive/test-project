@@ -7,11 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Build Storybook
         uses: actions/upload-pages-artifact@v1
         with:
           path: storybook-static
-
   # Deploy job
   deploy:
     # Add a dependency to the build job
