@@ -1,10 +1,11 @@
 name: Build and Deploy Storybook
-on:
-  push:
-    paths: ["src/stories/**", "src/components/**"]
+  #on:
+  #push:
+  #  paths: ["src/stories/**", "src/components/**"]
 jobs:
   # Build job
   build:
+    runs-on: ubuntu-latest
     steps:
       - name: Build Storybook
         uses: actions/upload-pages-artifact@v1
